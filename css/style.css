@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url("../fonts/Montserrat-Light.ttf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url("../fonts/Montserrat-Medium.ttf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+body{
+    background: #121621;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-size: 18px;
+    line-height: 25px;
+}
+.wrapper {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto; 
+}
+header .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+}
+.logo__img {
+    width: fit-content;
+}
+.menu__list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.menu__list--item {
+}
+.menu__list--link {
+    color: #fff;
+}
+.menu__list--link:hover{
+    color: #92FFFE;
+}
