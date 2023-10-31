@@ -12,7 +12,8 @@ function Graphic() {
         </p>
         <button className="graphic__button">
           Есть&nbsp;идея
-          <img src="img/graphic.svg" alt="" />
+          <img src="img/graphic.svg" className='nohover' alt="" />
+          <img src="img/graphic-hover.svg" className='hover' alt="" />
         </button>
       </div>
       <div className="graphic__block">

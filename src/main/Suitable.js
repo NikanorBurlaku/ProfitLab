@@ -19,11 +19,10 @@ function Suitable() {
 
     function showSuitable() {
       const images = container.querySelectorAll('img');
-      images[0].style.display = 'block';
 
-      for (let i = 1; i < images.length; i++) {
+      for (let i = 0; i < images.length; i++) {
         setTimeout(() => {
-          images[i].style.display = 'block';
+          images[i].style.opacity = 1;
         }, i * (Math.floor(Math.random() * 1000) + 500));
       }
       setImagesVisible(true);
