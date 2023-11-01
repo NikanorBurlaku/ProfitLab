@@ -43,7 +43,7 @@ function Suitable() {
   }, [imagesVisible]);
 
   return (
-    <div className="wrapper suitable">
+    <div className="wrapper suitable" id='suitable'>
       <h2 className="suitable__title second__title">Кому подходит?</h2>
       <div className="suitable__container" ref={containerRef}>
         <div className="suitable__item">

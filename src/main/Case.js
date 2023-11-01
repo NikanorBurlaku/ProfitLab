@@ -18,7 +18,7 @@ function Case() {
   useEffect(() => {
     const container = containerRef.current;
 
-    function showSuitable() {
+    function showCases() {
       const cases = container.querySelectorAll('.case__item');
 
       for (let i = 0; i < cases.length; i++) {
@@ -31,7 +31,7 @@ function Case() {
 
     function handleScroll() {
       if (isVisible(container) && !casesVisible) {
-        showSuitable();
+        showCases();
         window.removeEventListener('scroll', handleScroll);
       }
     }
@@ -44,9 +44,9 @@ function Case() {
   }, [casesVisible]);
 
   return (
-    <div className="case wrapper">
+    <div className="case wrapper" id="case">
       <h2 className="second__title case__title">Успешные кейсы</h2>
-      <p className="case__descr">Мы&nbsp;запустили несколько прибыльных продуктов, которые стали лидерами на&nbsp;рынке</p>
+      <p className="case__descr strong__text">Мы&nbsp;запустили несколько прибыльных продуктов, которые стали лидерами на&nbsp;рынке</p>
       <div className="case__container" ref={containerRef}>
         <div className="case__item">
           <img src="img/case1.svg" className="case__img" alt="" />

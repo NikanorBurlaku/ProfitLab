@@ -15,7 +15,7 @@ function We() {
   }, []);
 
   return (
-    <div className="wrapper we">
+    <div className="wrapper we" id='we'>
       <h2 className="we__title second__title">Кто&nbsp;мы</h2>
       <div className="we__img">
         <img src="img/layout1.png" alt=""
@@ -27,7 +27,7 @@ function We() {
           style={{ top: -scrollPosition * 0.015 + 40 + '%' }} />
       </div>
       <div className="we__descr">
-        <p className="strong__text">Венчурная студия ProfitLab —</p>
+        <p className="strong__text">Венчурная студия ProfitLab&nbsp;—</p>
         <p className="we__descr--main">компания, которая даёт возможности для&nbsp;роста и&nbsp;развития стартапов,
           разрабатывает и&nbsp;обеспечивает их&nbsp;целым рядом сервисов и&nbsp;необходимых ресурсов</p>
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Essence() {
     return (
-        <div className="wrapper essence">
+        <div className="wrapper essence" id='essence'>
             <h2 className="essence__title second__title">Суть предложения</h2>
             <div className="essence__scroll">
                 <div className="essence__container">
@@ -24,6 +24,12 @@ function Essence() {
                         <p className="essence__item--title">/04.</p>
                         <p className="essence__item--descr">Совместно запускаем новый бизнес</p>
                     </div>
+                </div>
+
+                <div className='essence__back'>
+                    <div className='essence__back-line'></div>
+                    <div className='essence__back-line'></div>
+                    <div className='essence__back-line'></div>
                 </div>
             </div>
         </div>

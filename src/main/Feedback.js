@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import Thanks from './Thanks';
 
 function Feedback() {
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    messenger: 'Телеграм',
+    messenger: '',
     messengerUsername: '',
     idea: '',
     agreeToTerms: false,
@@ -45,7 +44,7 @@ function Feedback() {
 
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value, // Update the specific property in the state
+      [name]: value,
     }));
   }
   const handleAgreeChange = (e) => {
@@ -53,16 +52,16 @@ function Feedback() {
 
     setFormData((prevFormData) => ({
       ...prevFormData,
-      agreeToTerms: !(prevFormData.agreeToTerms), // Update the specific property in the state
+      agreeToTerms: !(prevFormData.agreeToTerms),
     }));
   }
 
   const closeThanks = () => {
-    setSubmitted(false); // Set submitted to false to close the "Thanks" component
+    setSubmitted(false);
   };
   return (
     <>
-      <div className='feedback__container'>
+      <div id='feedback' className='feedback__container'>
         <div className="feedback">
           <form onSubmit={handleSubmit} className="feedback__form">
             <div className="feedback__title">
@@ -80,8 +79,10 @@ function Feedback() {
               </label>
               <label htmlFor="" className="feedback__form-label">
                 Мессенджер
-                <select name="" className="feedback__form-input" id="">
-                  <option value="Телеграм">Телеграм</option>
+                <select name="messenger" className="feedback__form-input" id="" onChange={handleInputChange}>
+                  <option value="Telegram">Telegram</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="Skype">Skype</option>
                 </select>
               </label>
               <label htmlFor="" className="feedback__form-label">

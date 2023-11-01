@@ -2,7 +2,7 @@ import React from 'react';
 
 function Give() {
   return (
-    <div className="give wrapper">
+    <div className="give wrapper" id='give'>
       <h2 className="give__title second__title">Что даем?</h2>
       <div className="give__container">
         <div className="give__item">
