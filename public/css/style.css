@@ -1236,7 +1236,7 @@ footer.wrapper {
     font-weight: 400;
 }
 
-.thanks__title {
+p.thanks__title {
     color: #92FFFE;
     font-size: 40px;
     font-weight: 500;
@@ -2137,6 +2137,11 @@ footer.wrapper {
 
     .footer__links {
         gap: 10px;
+    }
+    .thanks__container{
+        width: 320px;
+        height: 300px;
+        padding:  75px 40px;
     }
 }
 
