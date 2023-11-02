@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react';
 function Case() {
 
   const containerRef = useRef(null);
-  const [casesVisible, setcasesVisible] = useState(false);
 
   function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
