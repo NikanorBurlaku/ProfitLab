@@ -16,8 +16,8 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true, // use SSL
     auth: {
-        user: 'nicanorburlacu@gmail.com',
-        pass: 'raiyuxfzriefqrsg'
+        user: 'example@gmail.com',
+        pass: 'password'
     }
 });
 
@@ -30,7 +30,7 @@ app.post('/submitForm', (req, res) => {
     // Настройте письмо
     const mailOptions = {
         from: 'mail@gmail.com',
-        to: 'nicanorburlacu@gmail.com', // Электронный адрес получателя
+        to: 'example@gmail.com', // Электронный адрес получателя
         subject: 'Отклик с сайта ProfitLab',
         text: `
       Имя: ${formData.name}
