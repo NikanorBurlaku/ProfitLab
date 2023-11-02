@@ -5,35 +5,32 @@ function Case() {
   const containerRef = useRef(null);
   const [casesVisible, setcasesVisible] = useState(false);
 
-  function isVisible(elem) {
-    if (!elem) return false;
-    const docViewTop = window.scrollY;
-    const docViewBottom = docViewTop + window.innerHeight;
-    const elemTop = elem.offsetTop;
-    const elemBottom = elemTop + elem.offsetHeight;
-
-    return elemBottom <= docViewBottom && elemTop >= docViewTop;
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
   }
 
   useEffect(() => {
     const container = containerRef.current;
+    const cases = container.querySelectorAll('.case__item');
 
-    function showCases() {
-      const cases = container.querySelectorAll('.case__item');
-
-      for (let i = 0; i < cases.length; i++) {
-        setTimeout(() => {
-          cases[i].style.opacity = 1;
-        }, i * (Math.floor(Math.random() * 1000) + 500));
-      }
-      setcasesVisible(true);
+    function showCase(index) {
+      setTimeout(() => {
+        cases[index].style.opacity = 1;
+      }, index * (Math.floor(Math.random() * 1000) + 500));
     }
 
     function handleScroll() {
-      if (isVisible(container) && !casesVisible) {
-        showCases();
-        window.removeEventListener('scroll', handleScroll);
-      }
+      cases.forEach((caseItem, index) => {
+        if (isElementInViewport(caseItem)) {
+          showCase(index);
+        }
+      });
     }
 
     window.addEventListener('scroll', handleScroll);
@@ -41,7 +38,7 @@ function Case() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [casesVisible]);
+  }, []);
 
   return (
     <div className="case wrapper" id="case">

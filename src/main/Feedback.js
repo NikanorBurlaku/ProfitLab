@@ -17,26 +17,24 @@ function Feedback() {
     e.preventDefault();
     if (formData.agreeToTerms) {
       setSubmitted(true);
-      console.log(formData);
-    }
-    // Отправка данных на сервер
-    // fetch('http://localhost:3000/submitForm', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(formData),
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     // Дополнительные действия после отправки формы
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //     // Обработка ошибки
-    //   });
-  };
+
+      // Отправка данных на сервер
+      fetch('http://localhost:3001/submitForm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    };
+  }
   const handleInputChange = (e) => {
 
     const value = e.target.value;

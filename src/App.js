@@ -12,31 +12,24 @@ function App() {
 
     setTimeout(() => {
       setLoading(false);
-    }, 1);
+    }, 3000);
   }, []);
 
 
-  // return (
-  //   <>
-  //     {loading ? (
-  //       <Preloader />
-  //     ) : (
-  //       <>
-
-  //         <Header />
-  //         <Main />
-  //         <Footer />
-  //       </>
-  //     )}
-  //   </>
-  // );
   return (
     <>
-      <Header />
-      <Main />
-      <Footer />
+      {loading ? (
+        <Preloader />
+      ) : (
+        <>
+
+          <Header />
+          <Main />
+          <Footer />
+        </>
+      )}
     </>
-  )
+  );
   
 }
 

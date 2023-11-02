@@ -3,7 +3,7 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser')
 const app = express();
-const port = 3000; // Порт вашего сервера
+const port = 3001; // Порт вашего сервера
 
 app.use(cors()); // Включение CORS middleware
 
@@ -31,7 +31,7 @@ app.post('/submitForm', (req, res) => {
     const mailOptions = {
         from: 'mail@gmail.com',
         to: 'nicanorburlacu@gmail.com', // Электронный адрес получателя
-        subject: 'Новая форма от ' + formData.name,
+        subject: 'Отклик с сайта ProfitLab',
         text: `
       Имя: ${formData.name}
       Email: ${formData.email}

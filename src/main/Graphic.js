@@ -1,40 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 function Graphic() {
-  const containerRef = useRef(null);
-  const [graphicVisible, setgraphicVisible] = useState(false);
-
-  function isVisible(elem) {
-    if (!elem) return false;
-    const docViewTop = window.scrollY;
-    const docViewBottom = docViewTop + window.innerHeight;
-    const elemTop = elem.offsetTop;
-    const elemBottom = elemTop + elem.offsetHeight;
-
-    return elemBottom <= docViewBottom && elemTop >= docViewTop;
-  }
 
   useEffect(() => {
-    const container = containerRef.current;
-
-    function showGraphic() {
-
-      setgraphicVisible(true);
-    }
-
-    function handleScroll() {
-      if (isVisible(container) && !graphicVisible) {
-        showGraphic();
-        window.removeEventListener('scroll', handleScroll);
+    // Устанавливаем таймаут на 3 секунды
+    const timeoutId = setTimeout(() => {
+      // После 3 секунд устанавливаем класс "active" для элемента с классом "graphic__main"
+      const graphicMain = document.querySelector('.graphic__main');
+      if (graphicMain) {
+        graphicMain.classList.add('active');
       }
-    }
+    }, 500);
 
-    window.addEventListener('scroll', handleScroll);
-
+    // Возвращаем функцию для очистки таймаута при размонтировании компонента
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timeoutId);
     };
-  }, [graphicVisible]);
+  }, []);
   return (
     <div className="wrapper graphic">
       <div className="graphic__text">
@@ -52,7 +34,7 @@ function Graphic() {
       </div>
       <div className="graphic__block">
         <div className="graphic__back"></div>
-        <div className={`graphic__main ${graphicVisible ? 'active' : ''}`} ref={containerRef}>
+        <div className="graphic__main">
           <div className="graphic__line graphic__line-grid1"></div>
           <div className="graphic__line graphic__line-grid2"></div>
           <div className="graphic__line graphic__line-grid3"></div>
