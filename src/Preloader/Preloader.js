@@ -20,7 +20,7 @@ function Preloader() {
     return (
         <div className="preloader">
             <img className='preloader__bulb' src='./img/bulb.svg' alt=''  />
-            <img className='preloader__logo' src='./img/logo.png' alt='' />
+            <img className='preloader__logo' src='./img/logo.svg' alt='' />
             <div className="progress__container">
                 <div className='progress__bar' style={{ width: `${loadingProgress}%` }}></div>
             </div>
