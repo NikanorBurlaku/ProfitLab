@@ -13,8 +13,8 @@ function Footer() {
       </a>
 
       <p className="footer__links">
-        <a href="">Пользовательское соглашение</a>
-        <a href="">Политика конфиденциальности</a>
+        <a href="agreement.pdf">Пользовательское соглашение</a>
+        <a href="policy.pdf">Политика конфиденциальности</a>
       </p>
     </footer>
   );

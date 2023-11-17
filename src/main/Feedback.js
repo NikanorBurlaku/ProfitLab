@@ -8,7 +8,7 @@ function Feedback() {
     messenger: '',
     messengerUsername: '',
     idea: '',
-    agreeToTerms: false,
+    agreeToTerms: true,
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -101,12 +101,13 @@ function Feedback() {
                     <img src="img/feedback-cross.svg" alt="" />
                   </span>
                   <input type="checkbox" name="checkbox" id="checkbox" />
+                  <img src='../../public/img/feedback-border.svg' alt='' />
                   <p>
                     Я даю своё согласие на обработку персональных данных в соответствии с&nbsp;полным текстом
-                    <a href=""> Пользовательского соглашения</a> и <a href="">Политики конфиденциальности</a>
+                    <a href="agreement.pdf"> Пользовательского соглашения</a> и <a href="policy.pdf">Политики конфиденциальности</a>
                   </p>
                 </label>
-                <button type="submit" className="feedback__form-button">Вперёд к&nbsp;успеху!</button>
+                <button type="submit" className={(formData.agreeToTerms) ? "feedback__form-button active" : "feedback__form-button"} disabled={!formData.agreeToTerms}>Вперёд к&nbsp;успеху!</button>
               </div>
             </div>
           </form>
