@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/ProfitLab/static/css/main.e6c13ad2.css",
-    "main.js": "/ProfitLab/static/js/main.bce2db01.js",
+    "main.css": "/ProfitLab/static/css/main.31d6cfe0.css",
+    "main.js": "/ProfitLab/static/js/main.92aaaa40.js",
     "static/js/496.f428ce08.chunk.js": "/ProfitLab/static/js/496.f428ce08.chunk.js",
     "index.html": "/ProfitLab/index.html",
-    "main.e6c13ad2.css.map": "/ProfitLab/static/css/main.e6c13ad2.css.map",
-    "main.bce2db01.js.map": "/ProfitLab/static/js/main.bce2db01.js.map",
+    "main.92aaaa40.js.map": "/ProfitLab/static/js/main.92aaaa40.js.map",
     "496.f428ce08.chunk.js.map": "/ProfitLab/static/js/496.f428ce08.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.bce2db01.js"
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.92aaaa40.js"
   ]
 }
